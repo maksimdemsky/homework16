@@ -43,8 +43,7 @@ public class WebShopTests {
                 .when()
                 .get("http://demowebshop.tricentis.com/cart")
                 .then()
-                .statusCode(200)
-                .log().body();
+                .statusCode(200);
         assertThat("You have no items in your shopping cart.", is("You have no items in your shopping cart."));
 
         given()
