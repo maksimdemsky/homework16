@@ -55,7 +55,6 @@ public class WebShopTests {
                 .post("http://demowebshop.tricentis.com/addproducttocart/details/43/1")
                 .then()
                 .statusCode(200)
-                .log().body()
                 .body("success", is(true))
                 .body("updatetopcartsectionhtml", is("(5)"));
         open("http://demowebshop.tricentis.com/cart");
