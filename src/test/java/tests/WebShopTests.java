@@ -30,14 +30,14 @@ public class WebShopTests {
     @Test
     void addItemToCardAsExistUserTest() {
         String cookie =
-        given()
-                .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                .body("addtocart_43.EnteredQuantity=5")
-                .when()
-                .post("http://demowebshop.tricentis.com/addproducttocart/details/43/1")
-                .then()
-                .statusCode(200)
-                .log().body().extract().cookie("Nop.customer");
+                given()
+                        .contentType("application/x-www-form-urlencoded; charset=UTF-8")
+                        .body("addtocart_43.EnteredQuantity=5")
+                        .when()
+                        .post("http://demowebshop.tricentis.com/addproducttocart/details/43/1")
+                        .then()
+                        .statusCode(200)
+                        .log().body().extract().cookie("Nop.customer");
         given()
                 .cookie(cookie)
                 .when()
